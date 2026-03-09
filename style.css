@@ -13,6 +13,12 @@ body {
 
 /* Aside Left */
 
+.logo {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+}
+
 .aside-left {
     width: 595px;
     position: fixed;
