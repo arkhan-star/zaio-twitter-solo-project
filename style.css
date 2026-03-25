@@ -73,7 +73,26 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-left: auto;
+}
+
+.post-btn {
+    display: block;
+    margin-top: 16px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 16px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.post-btn:hover {
+    background-color: #272727;
+    color: #fff;
+    text-decoration: none;
 }
 
 .aside-bottom {
@@ -82,11 +101,32 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.aside-bottom p {
-    font-size: 15px;
-    color: #333;
+.aside-bottom:hover {
+    background-color: #e7e7e7;
+}
+
+.aside-bottom-text {
     display: flex;
     flex-direction: column;
+    flex: 1;
+}
+
+.aside-bottom-text strong {
+    font-size: 15px;
+    color: #0f1419;
+}
+
+.aside-bottom-text span {
+    font-size: 15px;
+    color: #536471;
+}
+
+.aside-bottom-more {
+    font-size: 18px;
+    color: #0f1419;
 }
