@@ -145,7 +145,7 @@ body {
     position: sticky;
     top: 0;
     background-color: rgba(255, 255, 255, 0.85);
-    #backdrop-filter: blur(12px);
+    position: -webkit-sticky;
     border-bottom: 1px solid #e1e8ed;
     z-index: 10;
 }
