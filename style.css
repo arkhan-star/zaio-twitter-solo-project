@@ -136,7 +136,7 @@ body {
     margin-left: 595px;
     width: 600px;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: white;
     border-right: 1px solid #e1e8ed;
 }
 
@@ -170,7 +170,21 @@ body {
 .tab.active {
     font-weight: 700;
     color: rgb(15, 20, 25);
-    border-bottom: 2px solid rgb(15, 20, 25);
+    border-bottom: 2px solid rgb(29, 155, 240);
+    border-bottom-width: 4px;
+}
+
+/* Post Container */
+
+.post-container {
+    padding: 16px;
+    height: 115vh;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.post {
+    border-bottom: 1px solid #e1e8ed;
+    padding: 16px 0;
 }
 
 /* Aside Right */
