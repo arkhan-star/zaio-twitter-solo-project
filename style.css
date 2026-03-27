@@ -466,7 +466,7 @@ body {
     text-decoration: none;
 }
 
-/* Today's Trends */
+/* Today's News */
 
 .aside-right .news {
     background-color: transparent;
@@ -477,13 +477,153 @@ body {
     border: 1px solid #e1e8ed;
 }
 
-.aside-right .whats-happening {
+.news h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.news ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.news ul li {
+    margin-bottom: 12px;
+}
+
+.news ul li a {
+    font-size: 15px;
+    color: rgb(15, 20, 25);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.news ul li span {
+    display: block;
+    font-size: 13px;
+    color: rgb(83, 100, 113);
+    font-weight: 400;
+}
+
+/* What's Happening */
+
+.whats-happening {
     background-color: transparent;
     color: black;
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 16px;
     border: 1px solid #e1e8ed;
+}
+
+.whats-happening h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.whats-happening ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.whats-happening ul li {
+    margin-bottom: 12px;
+}
+
+.whats-happening ul li a {
+    font-size: 15px;
+    color: rgb(15, 20, 25);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.whats-happening ul li span {
+    display: block;
+    font-size: 13px;
+    color: rgb(83, 100, 113);
+    font-weight: 400;
+}
+
+/* Who to Follow */
+
+.who-to-follow {
+    background-color: transparent;
+    color: black;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e1e8ed;
+}
+
+.who-to-follow h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.who-to-follow ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.who-to-follow ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.who-to-follow ul li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.who-to-follow ul li .follow-name {
+    flex: 1;
+}
+
+.follow-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(15, 20, 25);
+}
+
+/* Footer Section */
+
+.footer {
+    background-color: transparent;
+    color: black;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e1e8ed;
+    text-align: center;
+}
+
+.footer a {
+    font-size: 13px;
+    color: rgb(83, 100, 113);
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    list-style: none;
+}
+
+.footer .separator {
+    margin: 0 8px;
+    color: rgb(83, 100, 113);
 }
 
 /* Responsive Design */
