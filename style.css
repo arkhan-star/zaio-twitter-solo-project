@@ -721,16 +721,81 @@ body {
 
 /* Responsive Design */
 
-@media (max-width: 1200px) {
+/* Medium screens: icon-only sidebar, hide right sidebar, fluid main */
+@media (max-width: 1280px) {
+    .aside-left {
+        width: 68px;
+        justify-content: center;
+    }
+
+    .sidebar {
+        width: auto;
+        align-items: center;
+        padding: 8px 4px;
+    }
+
+    .aside-item span {
+        display: none;
+    }
+
+    .aside-item img {
+        margin-right: 0;
+    }
+
+    .aside-item {
+        padding: 12px;
+        justify-content: center;
+    }
+
+    .post-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .post-btn::after {
+        content: "+";
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .aside-bottom-text,
+    .aside-bottom-more {
+        display: none;
+    }
+
+    .aside-bottom {
+        padding: 12px;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .main {
+        margin-left: 68px;
+        width: auto;
+        max-width: 600px;
+    }
+
+    .aside-right {
+        display: none;
+    }
+}
+
+/* Small screens: hide sidebar entirely, full-width main */
+@media (max-width: 768px) {
     .aside-left {
         display: none;
     }
+
     .main {
         margin-left: 0;
         width: 100%;
-    }
-    .aside-right {
-        display: none;
+        max-width: 100%;
     }
 }
 
