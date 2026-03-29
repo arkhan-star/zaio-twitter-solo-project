@@ -49,8 +49,15 @@ body {
     transition: background-color 0.2s ease-in-out;
 }
 
+.aside-item:hover,
+.aside-item:visited,
+.aside-item:active {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+
 .aside-item:hover {
-    background-color: rgb(225, 232, 237);
+    background-color: rgba(15, 20, 25, 0.1);
 }
 
 .aside-item img {
@@ -968,6 +975,10 @@ body:has(#dark-toggle:checked) {
 #dark-toggle:checked ~ .aside-right .whats-happening,
 #dark-toggle:checked ~ .aside-right .who-to-follow {
     background-color: rgb(15, 20, 25);
+    color: rgb(225, 232, 237);
+}
+
+#dark-toggle:checked ~ .main .post-reel .post-content {
     color: rgb(225, 232, 237);
 }
 
