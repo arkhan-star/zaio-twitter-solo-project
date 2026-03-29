@@ -111,10 +111,9 @@
                         <button class="post-menu-btn" aria-label="More">•••</button>
                     </div>
                     <p class="post-content">Over 500 rocket landings now</p>
-                    <div class="post-media">
+                    <div class="post-media" data-video-src="./assets/post-reel-media/spacex-post.mp4">
                         <img src=".\assets\post-reel-media\spacex-post.jpg" alt="Rocket Image">
                         <button class="play-button" aria-label="Play Video">▶</button>
-                        <div class="watch-badge">Watch on X</div>
                     </div>
                     <div class="post-reel-footer">
                         <div class="post-action">
@@ -152,10 +151,9 @@
                         <button class="post-menu-btn" aria-label="More">•••</button>
                     </div>
                     <p class="post-content">China's Unitree AI Robot performs duomo di milano</p>
-                    <div class="post-media">
+                    <div class="post-media" data-video-src="./assets/post-reel-media/elcine.mp4">
                         <img src=".\assets\post-reel-media\elcine.jpg" alt="Rocket Image">
                         <button class="play-button" aria-label="Play Video">▶</button>
-                        <div class="watch-badge">Watch on X</div> <!-- https://x.com/EHuanglu/status/2037916332604448842?s=20 -->
                     </div>
                     <div class="post-reel-footer">
                         <div class="post-action">
@@ -194,10 +192,9 @@
                     </div>
                         <p class="post-content">China just released footage of their robot wolves running simulated street battles with micro-missiles and grenade launchers.</p>
                         <p class="post-content">Black Mirror called, they want their props back.</p>
-                    <div class="post-media">
+                    <div class="post-media" data-video-src="./assets/post-reel-media/mario-nawfal.mp4">
                         <img src=".\assets\post-reel-media\mario-nawfal.jpg" alt="Rocket Image">
                         <button class="play-button" aria-label="Play Video">▶</button>
-                        <div class="watch-badge">Watch on X</div> <!-- https://x.com/MarioNawfal/status/2037801866621571562?s=20 -->
                     </div>
                     <div class="post-reel-footer">
                         <div class="post-action">
@@ -237,10 +234,9 @@
                         <p class="post-content">JUST IN: Dramatic footage has emerged from Newlands West, Durban, on Saturday, March 28, 2026, capturing a brazen cash-in-transit heist outside Midway Mall.</p>
                         <p class="post-content">In the video, heavily armed suspects are seen intercepting an armoured vehicle before detonating explosives to breach it.</p>
                         <p class="post-content">Moments later, the suspects are filmed swiftly loading cash and valuables into getaway vehicles before fleeing the scene at high speed.</p>
-                    <div class="post-media">
+                    <div class="post-media" data-video-src="./assets/post-reel-media/bsn.mp4">
                         <img src=".\assets\post-reel-media\bsn.jpg" alt="Rocket Image">
                         <button class="play-button" aria-label="Play Video">▶</button>
-                        <div class="watch-badge">Watch on X</div> <!-- https://x.com/Barristerstreet/status/2037816677220352126?s=20 -->
                     </div>
                     <div class="post-reel-footer">
                         <div class="post-action">
@@ -278,10 +274,9 @@
                         <button class="post-menu-btn" aria-label="More">•••</button>
                     </div>
                         <p class="post-content">AI expert's 2027 production that will affect every human</p>
-                    <div class="post-media">
+                    <div class="post-media" data-video-src="./assets/post-reel-media/kyros.mp4">
                         <img src=".\assets\post-reel-media\kyros.jpg" alt="Rocket Image">
                         <button class="play-button" aria-label="Play Video">▶</button>
-                        <div class="watch-badge">Watch on X</div> <!-- https://x.com/IamKyros69/status/2037801479617253533?s=20 -->
                     </div>
                     <div class="post-reel-footer">
                         <div class="post-action">
@@ -408,6 +403,17 @@
                 <p class="footer-copy">&copy; 2026 Fake Twitter HQ - Developed by Al-Ridhaa Khan</p>
             </div>
         </section>
+        <div class="video-modal" id="video-modal" hidden>
+            <div class="video-modal-backdrop"></div>
+            <div class="video-modal-content">
+                <button class="close-btn" aria-label="Close">&times;</button>
+                <video id="modal-video" playsinline></video>
+                <button class="mute-btn" aria-label="Unmute"></button>
+                <div class="video-progress">
+                    <div class="video-progress-fill"></div>
+                </div>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

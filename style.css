@@ -405,6 +405,119 @@ body {
     border-radius: 4px;
 }
 
+/* Video Modal */
+
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal[hidden] {
+    display: none;
+}
+
+.video-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-modal-content {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    width: 90%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-modal-content video {
+    width: 100%;
+    display: block;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.video-modal .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(15, 20, 25, 0.75);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: background-color 0.2s;
+}
+
+.video-modal .close-btn:hover {
+    background-color: rgba(15, 20, 25, 0.95);
+}
+
+.video-modal .mute-btn {
+    position: absolute;
+    bottom: 18px;
+    right: 14px;
+    background-color: rgba(15, 20, 25, 0.75);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.video-modal-content:hover .mute-btn {
+    opacity: 1;
+}
+
+.video-modal .video-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 3;
+    cursor: pointer;
+    transition: height 0.1s;
+}
+
+.video-modal .video-progress:hover {
+    height: 6px;
+}
+
+.video-modal .video-progress-fill {
+    height: 100%;
+    background-color: rgb(29, 155, 240);
+    width: 0%;
+}
+
 /* Aside Right */
 
 .aside-right {
