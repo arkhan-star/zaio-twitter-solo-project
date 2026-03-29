@@ -6,8 +6,10 @@
         <title>South Africa | X Solo</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     </head>
     <body>
+        <input type="checkbox" id="dark-toggle" hidden>
         <section class="aside-left">
             <div class="sidebar">
                 <div class="logo">
@@ -57,6 +59,9 @@
                     <img src="assets/more.svg" alt="More Icon">
                     <span>More</span>
                 </a>
+                <label for="dark-toggle" class="dark-toggle-btn">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </label>
                 <a href="https://x.com/compose/post" class="post-btn">Post</a>
                 <div class="aside-bottom">
                     <img src="assets/profile.jpg" alt="Profile Picture" class="profile-pic">
@@ -64,7 +69,7 @@
                         <strong>Al-Ridhaa Khan</strong>
                         <span>@alridhaa_</span>
                     </div>
-                    <span class="aside-bottom-more"><strong>&#8230;</strong></span>
+                    <span class="aside-bottom-more">•••</span>
                 </div>
             </div>
         </section>
