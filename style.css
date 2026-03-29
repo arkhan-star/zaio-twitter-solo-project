@@ -239,7 +239,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-top: 8px;
-    border-top: 1px solid #e1e8ed;
+    margin-left: 45px;
+}
+
+.invert-to-blue {
+     filter: invert(45%) sepia(94%) saturate(1900%) hue-rotate(185deg) brightness(100%) contrast(95%);
 }
 
 .tab-list {
@@ -288,7 +292,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
 }
 
 .post-reel .post-user-info {
@@ -407,9 +411,8 @@ body {
     flex: 0 0 390px;
     position: sticky;
     top: 0;
-    height: 100vh;
     padding: 12px 20px;
-    overflow-y: auto;
+    align-self: flex-start;
 }
 
 .aside-right .search-bar {
@@ -753,13 +756,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
-    }
-
-    .post-btn::after {
-        content: "+";
-        font-size: 24px;
-        font-weight: 700;
+        border-radius: 50px;
     }
 
     .aside-bottom-text,
@@ -825,6 +822,10 @@ body {
 #dark-toggle:checked ~ .main, 
 #dark-toggle:checked ~ .aside-right {
     background-color: rgb(15, 20, 25);
+}
+
+#dark-toggle:checked ~ .post-menu-btn {
+    color: rgb(225, 232, 237);
 }
 
 #dark-toggle:checked ~ .aside-left .aside-item,
