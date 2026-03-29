@@ -824,13 +824,8 @@ body {
     background-color: rgb(15, 20, 25);
 }
 
-#dark-toggle:checked ~ .post-menu-btn {
-    color: rgb(225, 232, 237);
-}
-
 #dark-toggle:checked ~ .aside-left .aside-item,
 #dark-toggle:checked ~ .aside-left .aside-bottom,
-#dark-toggle:checked ~ .main .post,
 #dark-toggle:checked ~ .main .main-tabs .tab,
 #dark-toggle:checked ~ .aside-right .search-bar,
 #dark-toggle:checked ~ .aside-right .subscribe,
@@ -849,7 +844,6 @@ body {
 
 #dark-toggle:checked ~ .aside-left .aside-item:hover,
 #dark-toggle:checked ~ .aside-left .aside-bottom:hover,
-#dark-toggle:checked ~ .main .post:hover,
 #dark-toggle:checked ~ .main .main-tabs .tab:hover,
 #dark-toggle:checked ~ .aside-right .search-bar:hover,
 #dark-toggle:checked ~ .aside-right .subscribe:hover,
@@ -862,11 +856,9 @@ body {
 #dark-toggle:checked ~ .aside-left .aside-item span,
 #dark-toggle:checked ~ .aside-left .aside-bottom-text strong,
 #dark-toggle:checked ~ .aside-left .aside-bottom-text span,
-#dark-toggle:checked ~ .main .post-header .post-user-info strong,
-#dark-toggle:checked ~ .main .post-header .post-user-info span,
-#dark-toggle:checked ~ .main .post-reel-header .post-user-info .post .post-display-name,
-#dark-toggle:checked ~ .main .post-reel-header .post-user-info .post .handle,
-#dark-toggle:checked ~ .main .post-reel-header .post-user-info .post .post-time,
+#dark-toggle:checked ~ .main .post-reel-header .post-display-name,
+#dark-toggle:checked ~ .main .post-reel-header .post-handle,
+#dark-toggle:checked ~ .main .post-reel-header .post-time,
 #dark-toggle:checked ~ .aside-right .subscribe h3,
 #dark-toggle:checked ~ .aside-right .subscribe p,
 #dark-toggle:checked ~ .aside-right .news h3,
