@@ -818,8 +818,12 @@ body {
     background-color: rgb(225, 232, 237);
 }
 
+body:has(#dark-toggle:checked) {
+    background-color: rgb(15, 20, 25);
+}
+
 #dark-toggle:checked ~ .aside-left,
-#dark-toggle:checked ~ .main, 
+#dark-toggle:checked ~ .main,
 #dark-toggle:checked ~ .aside-right {
     background-color: rgb(15, 20, 25);
 }
@@ -873,4 +877,21 @@ body {
     color: rgb(225, 232, 237);
 }
 
+#dark-toggle:checked ~ .aside-left .post-btn,
+#dark-toggle:checked ~ .main .post-btn {
+    background-color: #fff;
+    color: rgb(15, 20, 25);
+}
+
+#dark-toggle:checked ~ .main .what-is-happening .post-user-info input,
+#dark-toggle:checked ~ .aside-right .search-bar input {
+    background-color: rgb(15, 20, 25);
+    color: rgb(225, 232, 237);
+}
+
+#dark-toggle:checked ~ .aside-right .search-bar {
+    border-color: rgb(47, 51, 54);
+}
+
 /* AI Features */
+
