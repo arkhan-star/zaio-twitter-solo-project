@@ -8,6 +8,7 @@ body {
     font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #fff;
     color: #333;
+    display: flex;
 }
 
 
@@ -20,10 +21,9 @@ body {
 }
 
 .aside-left {
-    width: 595px;
-    position: fixed;
+    flex: 0 0 clamp(275px, calc(50vw - 365px), 595px);
+    position: sticky;
     top: 0;
-    left: 0;
     height: 100vh;
     background-color: #fff;
     border-right: 1px solid #e1e8ed;
@@ -133,8 +133,7 @@ body {
 /* Main */
 
 .main {
-    margin-left: 595px;
-    width: 600px;
+    flex: 0 0 600px;
     min-height: 100vh;
     background-color: white;
     border-right: 1px solid #e1e8ed;
@@ -405,10 +404,9 @@ body {
 /* Aside Right */
 
 .aside-right {
-    position: fixed;
-    left: 1195px;
+    flex: 0 0 390px;
+    position: sticky;
     top: 0;
-    width: 390px;
     height: 100vh;
     padding: 12px 20px;
     overflow-y: auto;
@@ -724,7 +722,7 @@ body {
 /* Medium screens: icon-only sidebar, hide right sidebar, fluid main */
 @media (max-width: 1280px) {
     .aside-left {
-        width: 68px;
+        flex: 0 0 68px;
         justify-content: center;
     }
 
@@ -776,8 +774,7 @@ body {
     }
 
     .main {
-        margin-left: 68px;
-        width: auto;
+        flex: 1 1 600px;
         max-width: 600px;
     }
 
@@ -793,8 +790,7 @@ body {
     }
 
     .main {
-        margin-left: 0;
-        width: 100%;
+        flex: 1 1 100%;
         max-width: 100%;
     }
 }
