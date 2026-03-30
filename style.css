@@ -75,6 +75,36 @@ body {
     font-weight: 700;
 }
 
+.more-wrapper {
+    position: relative;
+    display: none;
+}
+
+.more-toggle-btn {
+    cursor: pointer;
+}
+
+.more-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    z-index: 100;
+    min-width: 220px;
+}
+
+.more-menu.open {
+    display: block;
+}
+
+.more-menu .aside-item {
+    padding: 12px 16px;
+}
+
 .profile-pic {
     width: 40px;
     height: 40px;
@@ -842,6 +872,17 @@ body {
 
 /* Responsive Design */
 
+/* Collapse aside items into More menu */
+@media (max-width: 1600px) {
+    .aside-item.collapsible {
+        display: none;
+    }
+
+    .more-wrapper {
+        display: block;
+    }
+}
+
 /* Medium screens: icon-only sidebar, hide right sidebar, fluid main */
 @media (max-width: 1280px) {
     .aside-left {
@@ -966,6 +1007,11 @@ body:has(#dark-toggle:checked) {
     background-color: rgb(15, 20, 25);
 }
 
+#dark-toggle:checked ~ .aside-left .more-menu {
+    background-color: rgb(25, 30, 35);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
 #dark-toggle:checked ~ .aside-left .aside-item,
 #dark-toggle:checked ~ .aside-left .aside-bottom,
 #dark-toggle:checked ~ .main .main-tabs .tab,
@@ -977,6 +1023,8 @@ body:has(#dark-toggle:checked) {
     background-color: rgb(15, 20, 25);
     color: rgb(225, 232, 237);
 }
+
+
 
 #dark-toggle:checked ~ .main .post-reel .post-content {
     color: rgb(225, 232, 237);

@@ -117,4 +117,21 @@ document.addEventListener("DOMContentLoaded", function () {
   modalVideo.addEventListener("error", function () {
     if (!modal.hidden) closeVideoModal();
   });
+
+  // More menu toggle
+  var moreBtn = document.getElementById("more-toggle-btn");
+  var moreMenu = document.getElementById("more-menu");
+
+  if (moreBtn && moreMenu) {
+    moreBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      moreMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!moreMenu.contains(e.target)) {
+        moreMenu.classList.remove("open");
+      }
+    });
+  }
 });
