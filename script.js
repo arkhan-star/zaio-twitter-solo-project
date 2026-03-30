@@ -134,4 +134,112 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // --- AI Post Creation ---
+  var postInput = document.querySelector(".what-is-happening .post-user-info input");
+  var postSubmitBtn = document.getElementById("post-submit-btn");
+  var whatIsHappening = document.querySelector(".what-is-happening");
+
+  function escapeHTML(str) {
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  async function generateImage(promptText) {
+    var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent";
+
+    var response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY
+      },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: "Generate an image: " + promptText }] }],
+        generationConfig: { responseModalities: ["TEXT", "IMAGE"] }
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("Gemini API error: " + response.status);
+    }
+
+    var data = await response.json();
+    var candidates = data.candidates;
+    if (candidates && candidates.length > 0) {
+      var parts = candidates[0].content.parts;
+      for (var i = 0; i < parts.length; i++) {
+        if (parts[i].inlineData) {
+          return "data:" + parts[i].inlineData.mimeType + ";base64," + parts[i].inlineData.data;
+        }
+      }
+    }
+
+    throw new Error("No image returned from Gemini API");
+  }
+
+  function createPostElement(text, imageDataUrl) {
+    var postReel = document.createElement("div");
+    postReel.className = "post-reel user-post";
+
+    postReel.innerHTML =
+      '<div class="post-reel-header">' +
+        '<img src="assets/profile.jpg" alt="Profile Picture" class="post-profile-pic">' +
+        '<div class="post-user-info">' +
+          '<span class="post-display-name">Al-Ridhaa Khan</span>' +
+          '<span class="post-handle">@alridhaa_</span>' +
+          '<span class="post-time">&middot; now</span>' +
+        '</div>' +
+        '<button class="delete-post-btn" aria-label="Delete post">&times;</button>' +
+      '</div>' +
+      '<p class="post-content">' + escapeHTML(text) + '</p>' +
+      '<div class="post-media">' +
+        '<img src="' + imageDataUrl + '" alt="AI Generated Image">' +
+      '</div>' +
+      '<div class="post-reel-footer">' +
+        '<div class="post-action"><img src="assets/post-container/comment.svg" alt="Comment Icon"><span>0</span></div>' +
+        '<div class="post-action"><img src="assets/post-container/repost.svg" alt="Repost Icon"><span>0</span></div>' +
+        '<div class="post-action"><img src="assets/post-container/like.svg" alt="Like Icon"><span>0</span></div>' +
+        '<div class="post-action"><img src="assets/post-container/view.svg" alt="Analytics Icon"><span>0</span></div>' +
+        '<div class="post-action icon-only"><img src="assets/post-container/bookmark.svg" alt="Bookmark Icon"></div>' +
+        '<div class="post-action icon-only"><img src="assets/post-container/share.svg" alt="Share Icon"></div>' +
+      '</div>';
+
+    return postReel;
+  }
+
+  if (postSubmitBtn && postInput) {
+    postSubmitBtn.addEventListener("click", async function () {
+      var text = postInput.value.trim();
+      if (!text) return;
+
+      postSubmitBtn.disabled = true;
+      postSubmitBtn.textContent = "Posting...";
+
+      try {
+        var imageDataUrl = await generateImage(text);
+        var newPost = createPostElement(text, imageDataUrl);
+        whatIsHappening.insertAdjacentElement("afterend", newPost);
+        postInput.value = "";
+      } catch (err) {
+        console.error("Failed to create post:", err);
+        alert("Failed to generate image. Please try again.");
+      } finally {
+        postSubmitBtn.disabled = false;
+        postSubmitBtn.textContent = "Post";
+      }
+    });
+  }
+
+  // Delete user posts (delegated)
+  document.addEventListener("click", function (e) {
+    var deleteBtn = e.target.closest(".delete-post-btn");
+    if (!deleteBtn) return;
+
+    var postReel = deleteBtn.closest(".post-reel.user-post");
+    if (postReel) {
+      postReel.remove();
+    }
+  });
 });
